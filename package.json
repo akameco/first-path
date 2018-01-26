@@ -1,0 +1,44 @@
+{
+  "name": "first-path",
+  "version": "0.0.0",
+  "description": "get first path",
+  "license": "MIT",
+  "repository": "akameco/first-path",
+  "author": "akameco <akameco.t@gmail.com> (akameco.github.io)",
+  "engines": {
+    "node": ">=6"
+  },
+  "scripts": {
+    "add-contributor": "all-contributors add",
+    "precommit": "yarn flow && yarn test && lint-staged",
+    "fmt": "prettier --write '**/*.{js,json,md}'",
+    "flow": "flow",
+    "lint": "eslint .",
+    "test": "jest",
+    "test:cov": "jest --coverage --ci --runInBand",
+    "test:ci": "yarn flow && yarn lint && yarn test:cov"
+  },
+  "lint-staged": {
+    "*.{js,json,md}": [
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "files": [
+    "index.js"
+  ],
+  "keywords": [
+    "path"
+  ],
+  "dependencies": {},
+  "devDependencies": {
+    "all-contributors-cli": "^4.10.1",
+    "eslint": "^4.16.0",
+    "eslint-config-precure": "^2.0.0",
+    "flow-bin": "^0.64.0",
+    "husky": "^0.14.3",
+    "jest": "^22.1.4",
+    "lint-staged": "^6.1.0",
+    "prettier": "^1.10.2"
+  }
+}
